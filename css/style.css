@@ -2,9 +2,7 @@
     width: 666px; height: 666px;
     background-color:black;
 }
-.row {
-    width: inherit; height: 33.33%;
-}
+.row { width: inherit; height: 33.33%; }
 span {
     background-color: blue;
     width: 33.33%; height: 100%;
