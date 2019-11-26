@@ -14,7 +14,32 @@ function tact1() {
     return;
 }
 
+function aiMove() {
+    let t1 = document.getElementById("t1");
+    let t2 = document.getElementById("t2");
+    let t3 = document.getElementById("t3");
+    let m1 = document.getElementById("m1");
+    let m2 = document.getElementById("m2");
+    let m3 = document.getElementById("m3");
+    let b1 = document.getElementById("b1");
+    let b2 = document.getElementById("b2");
+    let b3 = document.getElementById("b3");
+        let spots = [t1, t2, t3, m1, m2, m3, b1, b2, b3];
+        let rand = Math.random();
+        let spotsSpx = spots.length;
+        let randIndex = Math.floor(rand*spotsSpx);
+        let randomSpot = spots[randIndex];
+        console.log(randomSpot);
 
+        if (randomSpot.innerText.length<1) {
+            randomSpot.innerHTML = "O";
+            aiTurns += 1;
+            return;
+        } else {
+            aiMove();
+        }
+    return;
+}
 
 function checkWin() {
     if (turns>=3) {
