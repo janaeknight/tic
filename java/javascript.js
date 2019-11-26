@@ -4,11 +4,11 @@ var aiTurns = 0;
 
 function tact1() {
     var tic = document.getElementById("t1");
-        if (tic.length>1) {
-            tic.innerHTML = "x";
+        if (tic.innerText.length<1) {
+            tic.innerHTML = "X";
             turns += 1;
             userTurns += 1;
-        };
+        }
     console.log("Your turns: " +userTurns,);
     console.log("Computer turns: " +aiTurns,);
     return;
