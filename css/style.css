@@ -8,5 +8,10 @@
 span {
     background-color: blue;
     width: 33.33%; height: 100%;
-    font-size: 22px; color: whitesmoke;
+    text-align: center;
+    font-size: 200px; color: whitesmoke;
 }
+
+#t1, #m1, #b1 { border-right: 2px solid black; }
+#t3, #m3, #b3 { border-left: 2px solid black; }
+#m1, #m2, #m3, #b1, #b2, #b3 { border-top: 2px solid black; }
