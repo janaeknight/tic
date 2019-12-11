@@ -7,26 +7,26 @@
     <title>Tic</title>
     <link href="css/flex.css" type="text/css" rel="stylesheet" />
     <link href="css/style.css" type="text/css" rel="stylesheet" />
-    <script src="java/javascript.js"></script>
 </head>
 <body>
     <div class="busy" name="busy" id="busy">
         <div class="row">
-            <span class="spx" id="t1" onClick=tact1();checkWin()></span>
-            <span class="spx" id="t2" onClick=tact2();checkWin()></span>
-            <span class="spx" id="t3" onClick=tact3();checkWin()></span>
+            <span class="spx" id="t1" onClick=tact1(this)></span>
+            <span class="spx" id="t2" onClick=tact1(this)></span>
+            <span class="spx" id="t3" onClick=tact1(this)></span>
         </div>
         <div class="row">
-            <span class="spx" id="m1" onClick=tacm1();checkWin()></span>
-            <span class="spx" id="m2" onClick=tacm2();checkWin()></span>
-            <span class="spx" id="m3" onClick=tacm3();checkWin()></span>
+            <span class="spx" id="m1" onClick=tacm1();aiMove()></span>
+            <span class="spx" id="m2" onClick=tacm2();aiMove()></span>
+            <span class="spx" id="m3" onClick=tacm3();aiMove()></span>
         </div>
         <div class="row">
-            <span class="spx" id="b1" onClick=tacb1();checkWin()></span>
-            <span class="spx" id="b2" onClick=tacb2();checkWin()></span>
-            <span class="spx" id="b3" onClick=tacb3();checkWin()></span>
+            <span class="spx" id="b1" onClick=tacb1();aiMove()></span>
+            <span class="spx" id="b2" onClick=tacb2();aiMove()></span>
+            <span class="spx" id="b3" onClick=tacb3();aiMove()></span>
         </div>
     </div>
     <button id="" onClick="busy.row.spx = 'x' ">Clear</button>
+    <script src="java/javascript.js"></script>
 </body>
 </html>
