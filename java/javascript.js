@@ -21,6 +21,7 @@ function tact1(tic) {
         turns += 1;
         userTurns += 1;
         aiMove();
+        checkWin();
     }
     console.log("Your turns: " +userTurns,);
     console.log("Computer turns: " +aiTurns,);
@@ -49,20 +50,19 @@ function aiMove() {
 
 // All Possible Matches ((Manual))
 function checkWin() {
-    if (turns>=3) {
+    if (turns>=3 && ( 
+    ((t1="X") && (t2="X") && (t3="X")) || 
+    ((m1="X") && (m2="X") && (m3="X")) || 
+    ((b1="X") && (b2="X") && (b3="X")) || 
+    ((t1="X") && (m1="X") && (b1="X")) || 
+    ((t2="X") && (m2="X") && (b2="X")) || 
+    ((t3="X") && (m3="X") && (b3="X")) || 
+    ((t1="X") && (m2="X") && (b3="X")) || 
+    ((t4="X") && (m2="X") && (b1="X"))
+    )) {
         console.log("Checking possible solutions...");
-        if ( ((t1="X") && (t2="X") && (t3="X")) || 
-            ((m1="X") && (m2="X") && (m3="X")) || 
-            ((b1="X") && (b2="X") && (b3="X")) || 
-            ((t1="X") && (m1="X") && (b1="X")) || 
-            ((t2="X") && (m2="X") && (b2="X")) || 
-            ((t3="X") && (m3="X") && (b3="X")) || 
-            ((t1="X") && (m2="X") && (b3="X")) || 
-            ((t4="X") && (m2="X") && (b1="X"))
-        ) {
-            console.log("X wins!")
-        }
-    } else if (turns===9) {
+        console.log("X wins!")
+    } else {
         console.log("Draw!");
     };
     return;
