@@ -36,13 +36,12 @@ function aiMove() {
         let spotsSpx = spots.length;
         let randIndex = Math.floor(rand*spotsSpx);
         let randomSpot = spots[randIndex];
-        console.log(randomSpot)
-        // debugge
+        console.log(randomSpot);
+        // debugger
         if (randomSpot.innerText.length<1 && turns<=8) {
-            randomSpot.innerHTML = "O"
-            aiTurns += 1
-            console.log("Computer picked: " +randomSpot,)
-            return
+            randomSpot.innerHTML = "O";
+            aiTurns += 1;
+            return;
         } else {
             aiMove();
         }
@@ -64,7 +63,7 @@ function checkWin() {
         ((t4.text="X") && (m2.text="X") && (b1.text="X"))
     )) {
         console.log("X Wins!");
-
+        winner = "X";
         return true;
     } else if (turns>=3 && (
         ((t1.text="O") && (t2.text="O") && (t3.text="O")) || 
@@ -77,10 +76,10 @@ function checkWin() {
         ((t4.text="O") && (m2.text="O") && (b1.text="O"))
     )) {
         console.log("O Wins!");
-
+        winner = "O";
         return true;
     } else {
-        console.log("Draw!");
+        console.log("None");
         return false;
     };
 };
