@@ -1,3 +1,5 @@
+var winner = "";
+
 let turns = 0; 
 let userTurns = 0;
 let aiTurns = 0;
@@ -15,13 +17,13 @@ let aiTurns = 0;
 // 🤔🤔🤔
 
 function tact1(tic) {
-    // var tic = document.getElementById("t1");
     if (tic.innerText.length<1) {
         tic.innerHTML = "X";
         turns += 1;
         userTurns += 1;
         aiMove();
         checkWin();
+        showWinner();
     }
     console.log("Your turns: " +userTurns,);
     console.log("Computer turns: " +aiTurns,);
@@ -34,14 +36,13 @@ function aiMove() {
         let spotsSpx = spots.length;
         let randIndex = Math.floor(rand*spotsSpx);
         let randomSpot = spots[randIndex];
-        console.log(randomSpot);
-        // debugger
-
+        console.log(randomSpot)
+        // debugge
         if (randomSpot.innerText.length<1 && turns<=8) {
-            randomSpot.innerHTML = "O";
-            aiTurns += 1;
+            randomSpot.innerHTML = "O"
+            aiTurns += 1
             console.log("Computer picked: " +randomSpot,)
-            return;
+            return
         } else {
             aiMove();
         }
@@ -50,29 +51,50 @@ function aiMove() {
 
 // All Possible Matches ((Manual))
 function checkWin() {
-    if (turns>=3 && ( 
-    ((t1="X") && (t2="X") && (t3="X")) || 
-    ((m1="X") && (m2="X") && (m3="X")) || 
-    ((b1="X") && (b2="X") && (b3="X")) || 
-    ((t1="X") && (m1="X") && (b1="X")) || 
-    ((t2="X") && (m2="X") && (b2="X")) || 
-    ((t3="X") && (m3="X") && (b3="X")) || 
-    ((t1="X") && (m2="X") && (b3="X")) || 
-    ((t4="X") && (m2="X") && (b1="X"))
+    console.log("Checking possible solutions...");
+
+    if (turns>=3 && (
+        ((t1.text="X") && (t2.text="X") && (t3.text="X")) || 
+        ((m1.text="X") && (m2.text="X") && (m3.text="X")) || 
+        ((b1.text="X") && (b2.text="X") && (b3.text="X")) || 
+        ((t1.text="X") && (m1.text="X") && (b1.text="X")) || 
+        ((t2.text="X") && (m2.text="X") && (b2.text="X")) || 
+        ((t3.text="X") && (m3.text="X") && (b3.text="X")) || 
+        ((t1.text="X") && (m2.text="X") && (b3.text="X")) || 
+        ((t4.text="X") && (m2.text="X") && (b1.text="X"))
     )) {
-        console.log("Checking possible solutions...");
-        console.log("X wins!")
+        console.log("X Wins!");
+
+        return true;
+    } else if (turns>=3 && (
+        ((t1.text="O") && (t2.text="O") && (t3.text="O")) || 
+        ((m1.text="O") && (m2.text="O") && (m3.text="O")) || 
+        ((b1.text="O") && (b2.text="O") && (b3.text="O")) || 
+        ((t1.text="O") && (m1.text="O") && (b1.text="O")) || 
+        ((t2.text="O") && (m2.text="O") && (b2.text="O")) || 
+        ((t3.text="O") && (m3.text="O") && (b3.text="O")) || 
+        ((t1.text="O") && (m2.text="O") && (b3.text="O")) || 
+        ((t4.text="O") && (m2.text="O") && (b1.text="O"))
+    )) {
+        console.log("O Wins!");
+
+        return true;
     } else {
         console.log("Draw!");
+        return false;
     };
-    return;
+};
+
+function showWinner() {
+    // ...
+    // document.getElementById("").innerHTML = winner;
+    
+    if (checkWin()) {
+        console.log("Showing...");
+    } else {
+        // nothing
+    }
 }
-
-
-
-
-
-
 
 
 
